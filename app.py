@@ -1,11 +1,12 @@
 from flask import Flask
 
-app = Flask(__vijay__)
+app = Flask(__name__)  ✅  # correct
 
-@app.route('/')
+@app.route("/")
 def home():
-    return "Hello from Flask App deployed using Jenkins and Docker!"
+    return "Hello from Flask inside Docker via Jenkins CI/CD!"
 
-if __vijay__ == "__main__":
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
 
